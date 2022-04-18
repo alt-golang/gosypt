@@ -56,17 +56,4 @@ func main() {
 		flag.Usage()
 	}
 
-	//key := []byte("a very very very very secret key") // 32 bytes
-	//plaintext := []byte("hello")
-	//fmt.Printf("%s\n", plaintext)
-	//ciphertext, err := Encrypt(key, plaintext)
-	//if err != nil {
-	//	log.Fatal(err)
-	//}
-	//fmt.Printf("%0x\n", ciphertext)
-	//result, err := Decrypt(key, ciphertext)
-	//if err != nil {
-	//	log.Fatal(err)
-	//}
-	//fmt.Printf("%s\n", result)
 }
