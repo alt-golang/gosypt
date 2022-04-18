@@ -53,4 +53,4 @@ To use the module as a command from the command line `go install github.com/alt-
 
 May be freely distributed under the [MIT license](https://raw.githubusercontent.com/alt-golang/gosypt/main/LICENSE).
 
-Copyright (c) 2021 Craig Parravicini    
+Copyright (c) 2022 Craig Parravicini    
