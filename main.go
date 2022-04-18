@@ -6,11 +6,9 @@ import (
 	"log"
 )
 
-var version = "v0.0.1"
+var version = "v1.0.0"
 
 func main() {
-	//argsWithProg := os.Args
-	//argsWithoutProg := os.Args[1:]
 
 	versionPtr := flag.Bool("v", false, "output the version number")
 	passwordPtr := flag.String("p", "", "the secret key")
@@ -21,7 +19,7 @@ func main() {
 
 	if *helpPtr == false {
 		if *versionPtr {
-			fmt.Printf("alt-lang/gosypt %s\n", version)
+			fmt.Printf("github.com/alt-lang/gosypt %s\n", version)
 		} else if *passwordPtr == "" {
 			fmt.Println("Error: a secret key (flag -p) is required")
 			flag.Usage()
@@ -32,7 +30,6 @@ func main() {
 			} else if *decryptPtr != "" {
 				key := []byte(*passwordPtr)
 				value := []byte(*decryptPtr)
-				fmt.Printf("Decrypting value %s with key %s\n", value, key)
 				result, err := Decrypt(key, value)
 				if err == nil {
 					fmt.Printf("%s\n", string(result))
@@ -43,7 +40,6 @@ func main() {
 			} else if *encryptPtr != "" {
 				key := []byte(*passwordPtr)
 				value := []byte(*encryptPtr)
-				fmt.Printf("Encrypting value %s with key %s\n", value, key)
 				result, err := Encrypt(key, value)
 				if err == nil {
 					fmt.Printf("%s\n", string(result))

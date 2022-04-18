@@ -7,12 +7,12 @@ import (
 	"errors"
 )
 
+func DecryptString(key, textb64 string) (string, error) {
+	result, err := Decrypt([]byte(key), []byte(textb64))
+	return string(result), err
+}
+
 func Decrypt(key, textb64 []byte) ([]byte, error) {
-	//text := make([]byte, base64.StdEncoding.DecodedLen(len(textb64)))
-	//_, err := base64.StdEncoding.Decode(text, []byte(textb64))
-	//if err != nil {
-	//	fmt.Println("decode error:", err)
-	//}
 	text, err := base64.StdEncoding.DecodeString(string(textb64))
 	if err != nil {
 		return nil, err

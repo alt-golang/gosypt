@@ -8,6 +8,11 @@ import (
 	"io"
 )
 
+func EncryptString(key, text string) (string, error) {
+	result, err := Encrypt([]byte(key), []byte(text))
+	return string(result), err
+}
+
 func Encrypt(key, text []byte) ([]byte, error) {
 	block, err := aes.NewCipher(key)
 	if err != nil {
@@ -21,6 +26,5 @@ func Encrypt(key, text []byte) ([]byte, error) {
 	}
 	cfb := cipher.NewCFBEncrypter(block, iv)
 	cfb.XORKeyStream(ciphertext[aes.BlockSize:], []byte(b))
-	//return ciphertext, nil
 	return []byte(base64.StdEncoding.EncodeToString(ciphertext)), nil
 }
