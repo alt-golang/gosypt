@@ -1,11 +1,11 @@
 # Gosypt
 
-An idiomatic port of Node "Jasypt" in Go
+An idiomatic port of "Jasypt" in Go
 =====================================
 
 
-![Language Badge](https://img.shields.io/github/languages/top/@alt-golang/gosypt)
-[release notes](https://github.com/@alt-javascript/config/blob/main/History.md)
+![Language Badge](https://img.shields.io/github/languages/top/alt-golang/gosypt) <br/>
+[release notes](https://github.com/alt-golang/gosypt/blob/main/History.md)
 
 <a name="intro">Introduction</a>
 --------------------------------
