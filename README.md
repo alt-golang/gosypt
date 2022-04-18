@@ -5,7 +5,7 @@ An idiomatic port of "Jasypt" in Go
 
 
 ![Language Badge](https://img.shields.io/github/languages/top/alt-golang/gosypt) <br/>
-[release notes](https://github.com/alt-golang/gosypt/blob/main/History.md)
+[release notes](https://github.com/alt-golang/gosypt/blob/main/HISTORY.md)
 
 <a name="intro">Introduction</a>
 --------------------------------
