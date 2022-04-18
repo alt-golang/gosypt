@@ -31,7 +31,7 @@ To use the module as a command from the command line `go install github.com/alt-
     go install github.com/alt-golang/gosypt   
     export $PATH=$PATH:`go env GOPATH`\bin
     gosypt -v
-    > github.com/alt-lang/gosypt v0.0.1
+    > github.com/alt-lang/gosypt v1.0.0
     gosypt -h
     > Usage of gosypt:
     >  -d string
