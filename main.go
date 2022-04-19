@@ -7,7 +7,7 @@ import (
 	"log"
 )
 
-var version = "v1.0.1"
+var version = "v1.0.2"
 
 func main() {
 
@@ -20,7 +20,7 @@ func main() {
 
 	if *helpPtr == false {
 		if *versionPtr {
-			fmt.Printf("github.com/alt-lang/gosypt2 %s\n", version)
+			fmt.Printf("github.com/alt-lang/gosypt %s\n", version)
 		} else if *passwordPtr == "" {
 			fmt.Println("Error: a secret key (flag -p) is required")
 			flag.Usage()
