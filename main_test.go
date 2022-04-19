@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	gosypt "github.com/alt-golang/gosypt.pkg"
 	"os"
 	"testing"
 )
@@ -15,7 +16,7 @@ func TestMain(m *testing.M) {
 	// and CoverMode will be non empty if run with -cover
 	if rc == 0 && testing.CoverMode() != "" {
 		c := testing.Coverage()
-		if c < 0.75 {
+		if c < 0.874 {
 			fmt.Println("Tests passed but coverage failed at", c)
 			rc = -1
 		}
@@ -25,14 +26,14 @@ func TestMain(m *testing.M) {
 
 func TestEncryptDecrypt(t *testing.T) {
 
-	encrytped, _ := EncryptString("1234567890123456", "HelloWorld")
-	decrytped, _ := DecryptString("1234567890123456", encrytped)
+	encrytped, _ := gosypt.EncryptString("1234567890123456", "HelloWorld")
+	decrytped, _ := gosypt.DecryptString("1234567890123456", encrytped)
 
 	if decrytped != "HelloWorld" {
 		t.Errorf("decrytped != \"HelloWorld\": decrytped is:%s", decrytped)
 	}
 
-	_, err := EncryptString("123456789012345", "HelloWorld")
+	_, err := gosypt.EncryptString("123456789012345", "HelloWorld")
 
 	if err == nil {
 		t.Errorf("err == nil: err is:%s", "nil")

@@ -15,13 +15,16 @@ packages.
 <a name="usage">Usage</a>
 -------------------------
 
-To use the module in your Go modules `go get -d github.com/alt-golang/gosypt`
+To use the module in your Go modules `go get -d github.com/alt-golang/gosypt.pkg`
 
 ```go
     package main
-	encrytped, _ := EncryptString("1234567890123456", "HelloWorld")
+    import (
+        gosypt "github.com/alt-golang/gosypt.pkg"
+    )
+	encrypted, _ := gosypt.EncryptString("1234567890123456", "HelloWorld")
 	fmt.Println(encrypted)
-	decrytped, _ := DecryptString("1234567890123456", encrytped)
+	decrytped, _ := gosypt.DecryptString("1234567890123456", encrypted)
 ```
 
 To use the module as a command from the command line `go install github.com/alt-golang/gosypt`

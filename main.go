@@ -3,10 +3,11 @@ package main
 import (
 	"flag"
 	"fmt"
+	gosypt "github.com/alt-golang/gosypt.pkg"
 	"log"
 )
 
-var version = "v1.0.0"
+var version = "v1.0.1"
 
 func main() {
 
@@ -19,7 +20,7 @@ func main() {
 
 	if *helpPtr == false {
 		if *versionPtr {
-			fmt.Printf("github.com/alt-lang/gosypt %s\n", version)
+			fmt.Printf("github.com/alt-lang/gosypt2 %s\n", version)
 		} else if *passwordPtr == "" {
 			fmt.Println("Error: a secret key (flag -p) is required")
 			flag.Usage()
@@ -30,7 +31,7 @@ func main() {
 			} else if *decryptPtr != "" {
 				key := []byte(*passwordPtr)
 				value := []byte(*decryptPtr)
-				result, err := Decrypt(key, value)
+				result, err := gosypt.Decrypt(key, value)
 				if err == nil {
 					fmt.Printf("%s\n", string(result))
 				} else {
@@ -40,7 +41,7 @@ func main() {
 			} else if *encryptPtr != "" {
 				key := []byte(*passwordPtr)
 				value := []byte(*encryptPtr)
-				result, err := Encrypt(key, value)
+				result, err := gosypt.Encrypt(key, value)
 				if err == nil {
 					fmt.Printf("%s\n", string(result))
 				} else {
