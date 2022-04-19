@@ -7,8 +7,6 @@ import (
 	"log"
 )
 
-var version = "v1.0.2"
-
 func main() {
 
 	versionPtr := flag.Bool("v", false, "output the version number")
